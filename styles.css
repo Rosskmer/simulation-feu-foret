@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+
+
+.grille {
+    display: grid;
+    grid-template-columns: repeat(var(--colonne), 50px);
+    grid-template-rows: repeat(var(--ligne), 50px);
+    gap: 1px;
+    border: 1px solid #ccc;
+    background-color: #82b74b; 
+}
+
+.case-arbre {
+    background-color: #3b6c08;
+}
+
+.case-feu {
+    background-color: #fb0404;
+}
+
+.case-cendres {
+    background-color: #dcdcdc;
+}

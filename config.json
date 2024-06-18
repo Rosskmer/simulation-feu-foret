@@ -1,0 +1,9 @@
+{
+    "ligne": 10,
+    "colonne": 10,
+    "probabilitePropagation": 0.6,
+    "casesEnFeu": [
+        {"ligne": 2, "colonne": 3},
+        {"ligne": 3, "colonne": 4}
+    ]
+}
