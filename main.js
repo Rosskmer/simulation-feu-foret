@@ -7,25 +7,25 @@ fetch('config.json')
         const probabilitePropagation = config.probabilitePropagation;
         const casesEnFeu = config.casesEnFeu;
 
-        // Initialiser la grille HTML
+        
         const grilleHtml = document.getElementById('grille');
         grilleHtml.style.setProperty('--ligne', ligne);
         grilleHtml.style.setProperty('--colonne', colonne);
 
         let grille = [];
 
-        // Créer la grille initiale
+        
         for (let i = 0; i < ligne; i++) {
             grille[i] = [];
             for (let j = 0; j < colonne; j++) {
-                grille[i][j] = "arbre"; // Initialiser toutes les cases comme des arbres
+                grille[i][j] = "arbre"; 
                 const caseDiv = document.createElement('div');
                 caseDiv.className = 'case case-arbre';
                 grilleHtml.appendChild(caseDiv);
             }
         }
 
-        // Mettre les cases initialement en feu
+        
         casesEnFeu.forEach(caseFeu => {
             grille[caseFeu.ligne][caseFeu.colonne] = "feu";
             const caseDiv = grilleHtml.children[caseFeu.ligne * colonne + caseFeu.colonne];
@@ -33,7 +33,7 @@ fetch('config.json')
             caseDiv.classList.add('case-feu');
         });
 
-        // Fonction pour mettre à jour la grille à chaque étape de simulation
+        
         function mettreAJourGrille() {
             let nouvelleGrille = JSON.parse(JSON.stringify(grille));
 
@@ -49,13 +49,13 @@ fetch('config.json')
             afficherGrille();
         }
 
-        // Fonction pour propager le feu aux cases adjacentes
+       
         function propagerFeu(grilleTemp, i, j) {
             const directions = [
-                { di: -1, dj: 0 }, // haut
-                { di: 1, dj: 0 },  // bas
-                { di: 0, dj: -1 }, // gauche
-                { di: 0, dj: 1 }   // droite
+                { di: -1, dj: 0 }, 
+                { di: 1, dj: 0 },  
+                { di: 0, dj: -1 }, 
+                { di: 0, dj: 1 }   
             ];
 
             for (const dir of directions) {
@@ -95,6 +95,6 @@ fetch('config.json')
             }
         }
 
-        // Exécuter la simulation à intervalles réguliers (par exemple, toutes les 500 ms)
+        
         const simulationInterval = setInterval(mettreAJourGrille, 500);
     });
