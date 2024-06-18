@@ -15,11 +15,12 @@ body {
     grid-template-rows: repeat(var(--ligne), 50px);
     gap: 1px;
     border: 1px solid #ccc;
-    background-color: #82b74b; 
+    background-color: #719848; 
 }
 
 .case-arbre {
     background-color: #3b6c08;
+    margin: 4px;
 }
 
 .case-feu {
@@ -27,5 +28,6 @@ body {
 }
 
 .case-cendres {
-    background-color: #dcdcdc;
+    background-color: #c8c5c5;
+    margin: 4px;
 }
